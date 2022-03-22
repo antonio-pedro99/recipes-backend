@@ -9,12 +9,11 @@ from schemas.recipe import Recipe
 recipe = APIRouter()
 
 
-@recipe.get("/recipes")
+@recipe.get("/recipes", description="", tags= ["Recipe"])
 def get_recipe():
-    return conn.execute(recipes.select()).fetchall()
+    return conn.execute("select * from recipes").fetchall()
 
-
-@recipe.post("/recipes/")
+@recipe.post("/recipes/", tags= ["Recipe"])
 def create_recipe(recipe:Recipe):
     new_recipe = {
         "title": recipe.title, 
