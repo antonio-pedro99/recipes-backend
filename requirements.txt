@@ -5,3 +5,4 @@ pydantic==1.9.0
 SQLAlchemy==1.4.32
 uvicorn==0.13.4
 aiosqlite
+aiomysql
